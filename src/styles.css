@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
+ https://upload.wikimedia.org/wikipedia/commons/9/92/Christmas_tree_farm_IA.JPG*/
+body {
+    background:lightslategray;
+    background-image: url("http://islamichouseofisrael.com/wp-content/uploads/2013/09/Oak-Tree2.jpg");
+    background-size: cover;
+}

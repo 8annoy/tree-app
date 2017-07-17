@@ -1,9 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from "@ngrx/effects";
+
+import { TreeModule } from 'angular-tree-component';
+import { ClarityModule } from "clarity-angular";
 
 import { AppComponent } from './app.component';
+import { NodesService } from "app/services/nodes.service";
+import { reducer } from "app/reducers";
+import { TreeDataEffects } from 'app/common/effects/tree-data.effect';
+
+const reducers = { state: reducer };
 
 @NgModule({
   declarations: [
@@ -11,10 +22,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    ClarityModule.forRoot(),
     FormsModule,
-    HttpModule
+    HttpModule,
+    TreeModule,
+    BrowserAnimationsModule,
+    EffectsModule.run(TreeDataEffects),
+    StoreModule.provideStore(reducers)
   ],
-  providers: [],
+  providers: [NodesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
