@@ -1,0 +1,14 @@
+<div class="btn-group btn-icon-link">
+  <button class="btn" [disabled]="disabled" (click)="update.emit()" class="btn btn-primary">
+    <clr-icon shape="cog"></clr-icon>
+    Update
+  </button>
+  <button class="btn" [disabled]="disabled" (click)="add.emit()" class="btn btn-primary">
+    <clr-icon shape="add"></clr-icon>
+    Add
+  </button>
+  <button class="btn" [disabled]="disabled" (click)="delete.emit()" class="btn btn-primary">
+    <clr-icon shape="close"></clr-icon>
+    Delete
+  </button>
+</div>

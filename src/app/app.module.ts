@@ -13,12 +13,16 @@ import { AppComponent } from './app.component';
 import { NodesService } from "app/services/nodes.service";
 import { reducer } from "app/reducers";
 import { TreeDataEffects } from 'app/common/effects/tree-data.effect';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
 
 const reducers = { state: reducer };
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DialogComponent,
+    ActionBarComponent
   ],
   imports: [
     BrowserModule,

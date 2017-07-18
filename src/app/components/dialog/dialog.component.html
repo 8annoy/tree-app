@@ -1,0 +1,11 @@
+<clr-modal [clrModalOpen]="opened" [clrModalClosable]="true" [clrModalSize]="sm">
+  <h3 class="modal-title">Enter a new name:</h3>
+  <div class="modal-body">
+    <input #newName type="text" size="70" placeholder="Name">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="updated.emit(newName.value)">
+      OK
+    </button>
+  </div>
+</clr-modal>

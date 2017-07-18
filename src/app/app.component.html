@@ -2,20 +2,7 @@
   <div class="col-xs-6 col-xs-offset-3">
     <div class="card">
       <div class="card-header">
-        <div class="btn-group btn-icon-link">
-          <button class="btn" [disabled]="isDisabled(tree)" (click)="updateClicked()" class="btn btn-primary">
-              <clr-icon shape="cog"></clr-icon>
-              Update
-            </button>
-          <button class="btn" [disabled]="isDisabled(tree)" (click)="addNode()" class="btn btn-primary">
-              <clr-icon shape="add"></clr-icon>
-              Add
-            </button>
-          <button class="btn" [disabled]="isDisabled(tree)" (click)="deleteNode()" class="btn btn-primary">
-              <clr-icon shape="close"></clr-icon>
-              Delete
-          </button>
-        </div>
+        <action-bar [disabled]="isDisabled(tree)" (update)="updateClicked($event)" (add)="addNode($event)" (delete)="deleteNode($event)"></action-bar>
       </div>
       <div class="card-block">
         <tree-root #tree [nodes]="nodes" (click)="updateSelection(tree.treeModel.activeNodes)"></tree-root>
@@ -31,6 +18,7 @@
           </button>
         </div>
       </clr-modal>
+      <!--<dialog [opened]="opened" (updated)="updateNode($event)"></dialog>-->
     </div>
   </div>
 </div>

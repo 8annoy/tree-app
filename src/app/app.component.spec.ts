@@ -8,6 +8,7 @@ import { ClarityModule } from "clarity-angular";
 import { TreeModule } from 'angular-tree-component';
 import { Observable } from 'rxjs/Observable';
 import { By } from '@angular/platform-browser';
+import { ActionBarComponent } from './components/action-bar/action-bar.component';
 import * as actions from './actions/actions';
 describe('app component', () => {
     let mockStore: MockStore<State>;
@@ -21,10 +22,11 @@ describe('app component', () => {
         spyOn(mockStore, 'dispatch');
 
         TestBed.configureTestingModule({
-            declarations: [ AppComponent ],
+            declarations: [ AppComponent, ActionBarComponent ],
             imports: [TreeModule, ClarityModule.forRoot()],
             providers:[
-                {provide: Store, useValue: mockStore}
+                {provide: Store, useValue: mockStore},
+                ActionBarComponent
             ]
         }).compileComponents();
         fixture = TestBed.createComponent(AppComponent);
