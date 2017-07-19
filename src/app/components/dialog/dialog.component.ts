@@ -6,6 +6,5 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
 })
 export class DialogComponent {
   @Output() updated = new EventEmitter();
-  @Input() opened: boolean;
-  
+  @Input() opened: boolean;  
 }
