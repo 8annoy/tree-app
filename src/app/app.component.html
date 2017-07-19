@@ -7,18 +7,7 @@
       <div class="card-block">
         <tree-root #tree [nodes]="nodes" (click)="updateSelection(tree.treeModel.activeNodes)"></tree-root>
       </div>
-      <clr-modal [(clrModalOpen)]="opened" [clrModalClosable]="true" [clrModalSize]="sm">
-        <h3 class="modal-title">Enter a new name:</h3>
-        <div class="modal-body">
-          <input #newName type="text" size="70" placeholder="Name">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="updateNode(newName.value)">
-            OK
-          </button>
-        </div>
-      </clr-modal>
-      <!--<dialog [opened]="opened" (updated)="updateNode($event)"></dialog>-->
+      <update-modal [opened]="opened" (updated)="updateNode($event)"></update-modal>
     </div>
   </div>
 </div>

@@ -10,6 +10,8 @@ import { Observable } from 'rxjs/Observable';
 import { By } from '@angular/platform-browser';
 import { ActionBarComponent } from './components/action-bar/action-bar.component';
 import * as actions from './actions/actions';
+import { UpdateModalComponent } from "app/components/dialog/update-modal.component";
+
 describe('app component', () => {
     let mockStore: MockStore<State>;
     let mockData: State = {nodes: [{id: 233, name: 'mockName', children: []}], selection: null};
@@ -22,11 +24,10 @@ describe('app component', () => {
         spyOn(mockStore, 'dispatch');
 
         TestBed.configureTestingModule({
-            declarations: [ AppComponent, ActionBarComponent ],
+            declarations: [ AppComponent, ActionBarComponent, UpdateModalComponent ],
             imports: [TreeModule, ClarityModule.forRoot()],
             providers:[
-                {provide: Store, useValue: mockStore},
-                ActionBarComponent
+                {provide: Store, useValue: mockStore}
             ]
         }).compileComponents();
         fixture = TestBed.createComponent(AppComponent);
